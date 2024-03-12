@@ -38,3 +38,5 @@ export  async function handler(
     res.status(500).json({ success: false, message: 'Server error during credit purchase.' });
   }
 }
+
+export { handler as GET, handler as POST}
