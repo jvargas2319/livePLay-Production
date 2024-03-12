@@ -8,7 +8,7 @@ import { db } from '@/lib/db'; // Ensure this path matches where your db instanc
 const stripeSecretKey: string = process.env.STRIPE_SECRET_KEY || 'default_value';
 const stripe = new Stripe(stripeSecretKey);
 
-// Explicitly type req as NextApiRequest and res as NextApiResponse
+// Explicitly type req hi as NextApiRequest and res as NextApiResponse
 export  async function handler(
   req: NextApiRequest, 
   res: NextApiResponse
