@@ -129,7 +129,7 @@ export const InfoModal = ({
                     }
                   }}
                   onClientUploadComplete={(res) => {
-                    setThumbnailUrl(res?.[0]?.url);
+                    setThumbnailUrl(res?.[0]?.url ?? null);
                     router.refresh();
                     closeRef?.current?.click();
                   }}
