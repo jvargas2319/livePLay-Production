@@ -27,7 +27,7 @@ export const ourFileRouter = {
         },
       });
 
-      return { fileUrl: file.url };
+      
     })
 } satisfies FileRouter;
  
