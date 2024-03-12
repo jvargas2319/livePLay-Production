@@ -9,7 +9,7 @@ const stripeSecretKey: string = process.env.STRIPE_SECRET_KEY || 'default_value'
 const stripe = new Stripe(stripeSecretKey);
 
 // Explicitly type req as NextApiRequest and res as NextApiResponse
-export default async function handler(
+export  async function handler(
   req: NextApiRequest, 
   res: NextApiResponse
 ) {
