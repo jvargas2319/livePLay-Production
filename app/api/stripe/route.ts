@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import { db } from '@/lib/db'; // Ensure this path matches where your db instance is initialized
 
@@ -9,7 +9,7 @@ const stripeSecretKey: string = process.env.STRIPE_SECRET_KEY || 'default_value'
 const stripe = new Stripe(stripeSecretKey);
 
 // Explicitly type req hi as NextApiRequest and res as NextApiResponse
- async function handler(
+export default async function handler(
   req: NextApiRequest, 
   res: NextApiResponse
 ) {
