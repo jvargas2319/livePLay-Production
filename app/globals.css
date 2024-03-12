@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+:root {
+  height: 100%;
+  @apply bg-neutral-900/80;
+}
+
+.hidden-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border: 3px solid rgba(0, 102, 255, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #0066ff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #0066ff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid #0066ff;
+  border-right: 3px solid #0066ff;
+  border-radius: 50%;
+  animation: animateC 2s linear infinite;
+}
+
+.loader span {
+  display: block;
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  animation: animate 2s linear infinite;
+}
+
+.loader span::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #00aeff;
+  top: -6px;
+  right: -8px;
+  box-shadow: 0 0 20px 5px #0066ff;
+}
+
+@keyframes animateC {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+.hidden-scrollbar::-webkit-scrollbar { 
+  display: none;
+}
+ 
+@layer base {
+  :root {
+    /* Name: custom color palette
+       Author: Ilias Ism
+       URL: https://gradient.page */
+
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: #1D2B64;
+    --background: 242 97.75% 98.5%;
+    --foreground: 242 5.5% 1%;
+
+    --muted: 242 5.5% 92.5%;
+    --muted-foreground: 242 2.75% 42.5%;
+
+    --popover: 242 46% 92.5%;
+    --popover-foreground: 242 5.5% 1.25%;
+
+    --card: 242 46% 92.5%;
+    --card-foreground: 242 5.5% 1.25%;
+
+    --border: 242 10.5% 90%;
+    --input: 242 10.5% 90%;
+
+    --primary: 242 55% 25%;
+    --primary-foreground: 242 1.1% 92.5%;
+
+    --secondary: 242 2.75% 96.25%;
+    --secondary-foreground: 242 4.300000000000001% 12.5%;
+
+    --accent: 242 2.75% 96.25%;
+    --accent-foreground: 242 4.300000000000001% 12.5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 242 55% 25%;
+
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+     /* Name: custom color palette
+       Author: Ilias Ism
+       URL: https://gradient.page */
+
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: linear-gradient(to top left,#AA076B,#61045F);
+
+    --background: -39 59.800000000000004% 2.8%;
+    --foreground: -39 9.200000000000001% 96.75%;
+
+    --muted: -39 46% 10.5%;
+    --muted-foreground: -39 9.200000000000001% 53.5%;
+
+    --popover: -39 46.599999999999994% 4.55%;
+    --popover-foreground: -39 9.200000000000001% 96.75%;
+
+    --card: -39 46.599999999999994% 4.55%;
+    --card-foreground: -39 9.200000000000001% 96.75%;
+
+    --border: -39 46% 10.5%;
+    --input: -39 46% 10.5%;
+
+    --primary: -39 92% 35%;
+    --primary-foreground: -39 9.200000000000001% 96.75%;
+
+    --secondary: -39 46% 10.5%;
+    --secondary-foreground: -39 9.200000000000001% 96.75%;
+
+    --accent: -39 46% 10.5%;
+    --accent-foreground: -39 9.200000000000001% 96.75%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: -39 9.200000000000001% 96.75%;
+
+    --ring: -39 92% 35%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+ /* Credits Page */
+ .credits-list {
+  @apply mt-11 grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-9 xl:grid-cols-3;
+}
+
+
+
+.credits-btn {
+  @apply w-full rounded-full bg-purple-100 bg-cover text-purple-500 hover:text-purple-500;
+}
