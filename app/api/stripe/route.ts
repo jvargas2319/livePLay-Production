@@ -26,7 +26,7 @@ export  async function handler(
       currency: 'usd',
     });
 
-    // Update user's credits upon successful payment simulation
+    // Update user's credits upon successful payment simuelation
     await db.user.update({
       where: { id: userId },
       data: { credits: { increment: amount } },
@@ -38,3 +38,5 @@ export  async function handler(
     res.status(500).json({ success: false, message: 'Server error during credit purchase.' });
   }
 }
+
+export { handler as GET, handler as POST}
