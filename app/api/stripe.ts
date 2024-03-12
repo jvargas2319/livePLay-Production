@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
-import { db } from '@/lib/db'; // Ensure this path matches where your db instance is initialized
+import { db } from '../../lib/db'; // Ensure this path matches where your db instance is initialized
 
 // It's good practice to ensure your environment variables are correctly typed.
 // If STRIPE_SECRET_KEY is not set, this will default to 'default_value', but you
